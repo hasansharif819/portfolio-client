@@ -17,7 +17,7 @@ const Projects = () => {
     }, []);
 
     return (
-        <div className='w-11/12 mx-auto' id='project'>
+        <div id='project' style={{ width: "80%", margin: "0 auto" }}>
             <h1 className='text-4xl text-center text-gray-300 my-10'>
                 Project Showcase
             </h1>

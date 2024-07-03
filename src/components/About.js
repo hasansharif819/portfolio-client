@@ -1,11 +1,12 @@
 import React from 'react';
 import sharif1 from '../Image/sharif1.jpg'
+import Experience from './Experience';
 const About = () => {
     return (
-        <div id='about'>
+        <div id='about' className='w-4/5 mx-auto'>
             <h1 className='text-3xl text-center text-gray-300 my-10'>About</h1>
             <div className="card rounded-none lg:card-side bg-black shadow-xl">
-                <figure className='w-2/6'><img height={400} width={400} src={sharif1} alt="Album" /></figure>
+                <figure className='w-2/6 mr-12'><img height={400} width={400} src={sharif1} alt="Album" /></figure>
                 <div className="card-body p-10">
                     <h2 className="card-title text-gray-300 text-3xl py-5">About Me</h2>
                     <hr/>
@@ -26,7 +27,7 @@ const About = () => {
                         </div>
                         <span className="card-title text-gray-300 text-3xl py-5">Education</span>
                         <hr />
-                        B.sc ( 2017-Present )
+                        B.sc ( 2017-2022 )
                         <br />
                         Computer Science and Engineering (CSE)
                         <br />
