@@ -23,12 +23,34 @@ const Home = () => {
                         /></span>
 
                     </h1>
-                    <p className="py-6 text-2xl text-primary font-semibold">
+                    <p className="pt-5 text-2xl text-primary font-semibold">
                         <TypeAnimation
                             cursor={true}
                             sequence={[
                                 "Full-Stack Developer",
                                 5000,
+                            ]}
+                            wrapper="a"
+                            repeat={3}
+                        />
+                    </p>
+                    <p className="pt-2 text-2xl text-primary font-semibold">
+                        <TypeAnimation
+                            cursor={true}
+                            sequence={[
+                                "Web Developer",
+                                4000,
+                            ]}
+                            wrapper="a"
+                            repeat={3}
+                        />
+                    </p>
+                    <p className="mb-5 pt-2 text-2xl text-primary font-semibold">
+                        <TypeAnimation
+                            cursor={true}
+                            sequence={[
+                                "Frontend Developer",
+                                3000,
                             ]}
                             wrapper="a"
                             repeat={3}

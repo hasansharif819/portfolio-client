@@ -1,13 +1,13 @@
 import React from 'react';
 import sharif1 from '../Image/sharif1.jpg'
-import Experience from './Experience';
+// import Experience from './Experience';
 const About = () => {
     return (
         <div id='about' className='w-4/5 mx-auto'>
-            <h1 className='text-3xl text-center text-gray-300 my-10'>About</h1>
+            <h1 className='title text-3xl text-center text-gray-300 my-10'>About</h1>
             <div className="card rounded-none lg:card-side bg-black shadow-xl">
-                <figure className='w-2/6 mr-12'><img height={400} width={400} src={sharif1} alt="Album" /></figure>
-                <div className="card-body p-10">
+                <figure className='w-2/6 mr-12 about-image'><img height={400} width={400} src={sharif1} alt="Album" /></figure>
+                <div className="about-me card-body p-10">
                     <h2 className="card-title text-gray-300 text-3xl py-5">About Me</h2>
                     <hr/>
                     <div className='text-lg text-gray-400'>

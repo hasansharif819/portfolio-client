@@ -12,13 +12,14 @@ const Projects = () => {
                 setProjects(response.data.data);
             })
             .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
+                console.error('There was a problem with the fetch projects:', error);
             });
     }, []);
 
     return (
-        <div id='project' style={{ width: "80%", margin: "0 auto" }}>
-            <h1 className='text-4xl text-center text-gray-300 my-10'>
+        // <div id='project' style={{ width: "80%", margin: "0 auto" }}>
+        <div id="project" className="w-[87%] mx-auto">
+            <h1 className='title text-4xl text-center text-gray-300 my-10'>
                 Project Showcase
             </h1>
             <div className='w-11/12 mx-auto'>

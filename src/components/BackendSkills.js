@@ -17,8 +17,8 @@ const BackendSkills = () => {
     }, []);
 
     return(
-        <div className="card-body text-gray-300">
-            <h2 className="card-title mx-auto mb-3">Back-End / Server Side</h2>
+        <div className="bg-accent card-body text-gray-300">
+            <h2 className="card-title mx-auto skills-card">Back-End</h2>
             <div className="skills-section">
                 {
                     backendSkills?.map((backendSkill) => <BackendSkill key={backendSkill._id} backendSkill={backendSkill}/>)

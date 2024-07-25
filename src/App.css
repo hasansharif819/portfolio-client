@@ -3,3 +3,81 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.navbar {
+  background-color: rgb(27 28 31);
+}
+
+.title {
+  font-size: 75px;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .responsive-navbar {
+    justify-content: space-between !important;
+  }
+
+  .title {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 40px;
+  }
+
+  .about-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .about-image img {
+    border-radius: 15px;
+    width: 450px;
+  }
+
+  .about-me {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+  .navbar-start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .responsive-navbar {
+    justify-content: space-between !important;
+  }
+
+  .title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  .about-image {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .about-image img {
+    border-radius: 15px;
+  }
+
+  #project {
+    width: 95%;
+  }
+
+  #skills {
+    width: 87%;
+  }
+
+  .experience-link {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

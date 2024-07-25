@@ -16,8 +16,8 @@ const FrontendSkills = () => {
     }, []);
 
     return(
-        <div className="card-body text-gray-300">
-            <h2 className="card-title mx-auto mb-3">Front-End / Client Side</h2>
+        <div className="bg-accent card-body text-gray-300">
+            <h2 className="card-title mx-auto skills-card">Front-End</h2>
             <div className="skills-section">
                 {
                     frontendSkills?.map((frontendSkill) => <FrontendSkill key={frontendSkill._id} frontendSkill={frontendSkill}/>)

@@ -4,7 +4,9 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 const Contact = () => {
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const { register, formState: { errors } } = useForm();
+    // const { register, formState: { errors }, handleSubmit, reset } = useForm();
+
 
     // const onSubmit = async data => {
     //     fetch('/contact', {
@@ -44,8 +46,8 @@ const Contact = () => {
       };
 
     return (
-        <div id='contact'>
-            <h2 className="text-gray-300 text-3xl py-5 text-center">My Contact</h2>
+        <div id='contact' className=' my-16'>
+            <h2 className="title text-gray-300 text-3xl text-center mb-8">My Contact</h2>
 
             <div className='flex flex-col lg:flex-row justify-center items-center gap-5'>
                 <div className="card rounded lg:rounded-md flex-shrink-0 bg-accent w-full max-w-md shadow-2xl">
@@ -105,38 +107,40 @@ const Contact = () => {
                     <div className="card-body">
                         <h1 className='text-left text-gray-300'>Contact me</h1>
                         <form onSubmit={handleContact}>
-                            <div className='flex flex-col lg:flex-row gap-2 justify-between'>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text text-gray-300">Name</span>
-                                    </label>
-                                    <input type="text" placeholder="Your Name here" className="input input-bordered bg-white"
-                                        {...register("name", {
-                                            required: {
-                                                value: true,
-                                                message: 'name is Required'
-                                            }
-                                        })} />
-                                    <label className="label">
-                                        {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-                                    </label>
-                                </div>
+                            {/* <div className='flex flex-col lg:flex-row gap-2 justify-between'>
+                                
+                            </div> */}
 
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text text-gray-300">Subject</span>
-                                    </label>
-                                    <input type="text" placeholder="Your Subject" className="input input-bordered bg-white"  {...register("subject", {
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text text-gray-300">Name</span>
+                                </label>
+                                <input type="text" placeholder="Your Name here" className="input input-bordered bg-white"
+                                    {...register("name", {
                                         required: {
                                             value: true,
-                                            message: 'Subject is Required'
+                                            message: 'name is Required'
                                         }
                                     })} />
-                                    <label className="label">
-                                        {errors.subject?.type === 'required' && <span className="label-text-alt text-red-500">{errors.subject.message}</span>}
-                                    </label>
-                                </div>
+                                <label className="label">
+                                    {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                                </label>
                             </div>
+
+                            {/* <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text text-gray-300">Subject</span>
+                                </label>
+                                <input type="text" placeholder="Your Subject" className="input input-bordered bg-white"  {...register("subject", {
+                                    required: {
+                                        value: true,
+                                        message: 'Subject is Required'
+                                    }
+                                })} />
+                                <label className="label">
+                                    {errors.subject?.type === 'required' && <span className="label-text-alt text-red-500">{errors.subject.message}</span>}
+                                </label>
+                            </div> */}
 
                             <div className="form-control">
                                 <label className="label">

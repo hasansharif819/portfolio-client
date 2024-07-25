@@ -9,7 +9,7 @@ import Menubar from './components/Menubar';
 import Blogs from './components/Blogs';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
-import Experience from './components/Experience';
+import Experiences from './components/Experiences';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <Home />
       <Skills />
       <Projects />
-      <Experience />
+      <Experiences />
       <Blogs></Blogs>
       <About />
       <Contact />
