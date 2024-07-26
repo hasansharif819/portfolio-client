@@ -26,6 +26,8 @@ const Contact = () => {
 
     const handleContact = (e) => {
         e.preventDefault();
+
+        // console.log("Contact Info = ", register);
     
         emailjs
           .sendForm(
@@ -52,8 +54,8 @@ const Contact = () => {
             <div className='flex flex-col lg:flex-row justify-center items-center gap-5'>
                 <div className="card rounded lg:rounded-md flex-shrink-0 bg-accent w-full max-w-md shadow-2xl">
                     <div className="card-body text-left">
-                        <h1 className='text-left text-gray-300'>Contact Info</h1>
-                        <p className='text-left text-gray-300'>Feel free to contact me!</p>
+                        <h1 className='text-left text-gray-300 text-center text-xl'>Contact Info</h1>
+                        <p className='text-left text-gray-300 text-center text-xl'>Feel free to contact me!</p>
 
                         <div className='flex items-center text-gray-300'>
                             <svg className='w-8 h-8 fill-indigo-500' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z" /></svg>
@@ -105,12 +107,8 @@ const Contact = () => {
 
                 <div className="card rounded bg-accent lg:rounded-md flex-shrink-0 w-full max-w-md shadow-2xl">
                     <div className="card-body">
-                        <h1 className='text-left text-gray-300'>Contact me</h1>
+                        <h1 className='text-left text-gray-300 text-center text-xl'>Contact me</h1>
                         <form onSubmit={handleContact}>
-                            {/* <div className='flex flex-col lg:flex-row gap-2 justify-between'>
-                                
-                            </div> */}
-
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-gray-300">Name</span>
@@ -126,21 +124,6 @@ const Contact = () => {
                                     {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                                 </label>
                             </div>
-
-                            {/* <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text text-gray-300">Subject</span>
-                                </label>
-                                <input type="text" placeholder="Your Subject" className="input input-bordered bg-white"  {...register("subject", {
-                                    required: {
-                                        value: true,
-                                        message: 'Subject is Required'
-                                    }
-                                })} />
-                                <label className="label">
-                                    {errors.subject?.type === 'required' && <span className="label-text-alt text-red-500">{errors.subject.message}</span>}
-                                </label>
-                            </div> */}
 
                             <div className="form-control">
                                 <label className="label">

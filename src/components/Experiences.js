@@ -20,13 +20,13 @@ const Experiences = () => {
 
   return (
     <div id="experience" className="w-[87%] mx-auto">
-            <h1 className='title text-4xl text-center text-gray-300 my-10'>
-            Professional Experience
-            </h1>
-            <div className='max-w-4xl mx-auto'>
-                {experiences?.map((experience) => <Experience key={experience._id} experience={experience} />)}
-            </div>
+        <h1 className='title text-4xl text-center text-gray-300 my-10'>
+        Professional Experience
+        </h1>
+        <div className='max-w-4xl mx-auto'>
+            {experiences?.map((experience) => <Experience key={experience._id} experience={experience} />)}
         </div>
+    </div>
   )
 }
 

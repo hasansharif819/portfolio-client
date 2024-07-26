@@ -14,6 +14,104 @@
   line-height: 1.4em;
 }
 
+.blog-content-editor h1 {
+  font-size: 28px; 
+  font-weight: bold;
+}
+
+.blog-content-editor h2 {
+  font-size: 24px; 
+  font-weight: bold;
+}
+
+.blog-content-editor p {
+  font-size: 18px; 
+}
+
+.blog-content-editor .ql-size-huge {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.blog-content-editor .ql-size-large {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.blog-content-editor .ql-size-small {
+  font-size: 16px;
+}
+
+.blog-content-editor a {
+  color: blue;
+}
+
+.blog-content-editor ol {
+  list-style-type: decimal;
+  padding-left: 50px;
+  margin-top: 20px;
+}
+
+.blog-content-editor ul {
+  list-style-type: disc;
+  padding-left: 50px;
+  margin-top: 20px;
+}
+
+.blog-content-editor .ql-indent-1 {
+  margin-left: 10%;
+}
+
+.blog-content-editor .ql-indent-2 {
+  margin-left: 20%;
+}
+
+.blog-content-editor .ql-indent-3 {
+  margin-left: 30%;
+}
+
+.blog-content-editor .ql-indent-4 {
+  margin-left: 40%;
+}
+
+.blog-content-editor .ql-indent-5 {
+  text-align: center;
+}
+
+.ql-indent-5 img {
+  margin: 0 auto;
+}
+
+.blog-content-editor .ql-indent-6 {
+  margin-left: 60%;
+}
+
+.blog-content-editor .ql-indent-7 {
+  margin-left: 70%;
+}
+
+.blog-content-editor .ql-indent-8 {
+  margin-left: 80%;
+}
+
+.blog-content-editor .ql-indent-9 {
+  margin-left: 90%;
+}
+
+.blog-content-editor .ql-indent-10 {
+  margin-left: 100%;
+}
+
+.ql-toolbar {
+  color: white;
+}
+
+.ql-container {
+  min-height: 300px;
+}
+
+
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .responsive-navbar {
     justify-content: space-between !important;
