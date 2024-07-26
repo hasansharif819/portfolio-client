@@ -178,4 +178,12 @@
     flex-direction: column;
     gap: 15px;
   }
+
+  .my-blogs {
+    width: 90%;
+  }
+
+  .ql-container {
+    min-height: 200px;
+  }
 }

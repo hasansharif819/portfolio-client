@@ -22,7 +22,7 @@ const Blogs = () => {
         <div className='container mx-auto' id='blogs'>
             <h1 className='title text-3xl text-center text-gray-300 my-10'>Blogs</h1>
 
-            <div className='w-[100%] mx-auto'>
+            <div className='w-[100%] mx-auto my-blogs'>
                 {blogs?.map((blog) => <Blog key={blog._id} blog={blog} />)}
             </div>
             <div className="w-[100%] mx-auto mt-10">
