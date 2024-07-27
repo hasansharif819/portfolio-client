@@ -37,7 +37,9 @@ const Menubar = () => {
     return (
         <div className='shadow-lg sticky top-0 z-50 bg-accent text-white'>
             <div className="container responsive-navbar mx-auto flex justify-between items-center p-4">
+            <a href="#home" onClick={handleMenuItemClick}>
                 <h1 className="text-2xl font-bold">Sharif Hasan</h1>
+            </a>
                 
                 <div className="lg:hidden">
                     <button onClick={() => setIsOpen(!isOpen)} className="text-white">
