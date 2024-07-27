@@ -1,50 +1,40 @@
-import React from 'react';
-import emailjs from "@emailjs/browser";
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const Contact = () => {
-    const { register, formState: { errors } } = useForm();
-    // const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
 
+    const handleSubmit = async () => {
 
-    // const onSubmit = async data => {
-    //     fetch('/contact', {
-    //         method: 'POST',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(data)
-    //     })
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             toast.success('Your message send  successfully')
-    //             reset();
-    //         })
-
-    // }
-
-    const handleContact = (e) => {
-        e.preventDefault();
-
-        // console.log("Contact Info = ", register);
-    
-        emailjs
-          .sendForm(
-            "service_fvcdu7y",
-            "template_d83u48a",
-            e.target,
-            "fu_TJAw2cXaFV7loR"
-          )
-          .then((res) => {
-            if (res.status === 200) {
-              toast.success("Received your mail, I'll reply you later");
-              e.target.reset();
-            }
-          })
-          .catch((errors) => {
-            toast.error(errors.text);
+        try {
+          const response = await axios.post('https://portfolio-server-ten-eta.vercel.app/api/v1/contact/create-contact', {
+            name,
+            email,
+            message,
           });
+    
+          if (response.data.success) {
+            setName('');
+            setEmail('');
+            setMessage('');
+            toast.success('Your Message is send successfully. I will reply you soon. Thank you');
+          } else {
+            console.log('Failed to send message', response.data);
+          }
+        } catch (error) {
+          if (error.response) {
+            console.error('Response data:', error.response.data);
+            console.error('Response status:', error.response.status);
+            console.error('Response headers:', error.response.headers);
+          } else if (error.request) {
+            console.error('Request data:', error.request);
+          } else {
+            console.error('Error message:', error.message);
+          }
+        }
       };
 
     return (
@@ -107,66 +97,54 @@ const Contact = () => {
 
                 <div className="card rounded bg-accent lg:rounded-md flex-shrink-0 w-full max-w-md shadow-2xl">
                     <div className="card-body">
-                        <h1 className='text-left text-gray-300 text-center text-xl'>Contact me</h1>
-                        <form onSubmit={handleContact}>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text text-gray-300">Name</span>
-                                </label>
-                                <input type="text" placeholder="Your Name here" className="input input-bordered bg-white"
-                                    {...register("name", {
-                                        required: {
-                                            value: true,
-                                            message: 'name is Required'
-                                        }
-                                    })} />
-                                <label className="label">
-                                    {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-                                </label>
-                            </div>
+                        <h1 className='text-left text-gray-300 text-center text-xl pt-2'>Contact me</h1>
+                        <div className="form-control">
+                        <label className="label">
+                                <span className="label-text text-gray-300">Name</span>
+                            </label>
 
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text text-gray-300">Email</span>
-                                </label>
-                                <input type="email" placeholder="Your email" className="input input-bordered bg-white"
-                                    {...register("email", {
-                                        required: {
-                                            value: true,
-                                            message: 'email is Required'
-                                        }
-                                    })} />
-                                <label className="label">
-                                    {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                                </label>
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text text-gray-300">Message</span>
-                                </label>
-                                <textarea className="textarea textarea-bordered bg-white" placeholder="Your message"
-                                    {...register("message", {
-                                        required: {
-                                            value: true,
-                                            message: 'message is Required'
-                                        },
-                                        maxLength: {
-                                            value: 250,
-                                            message: 'You use maximum 250 characters'
-                                        }
-                                    })}
-                                ></textarea>
-                                <label className="label">
-                                    {errors.message?.type === 'required' && <span className="label-text-alt text-red-500">{errors.message.message}</span>}
+                            <input 
+                                type="text" 
+                                name="name" 
+                                value={name} 
+                                onChange={(e) => setName(e.target.value)} 
+                                placeholder="Your Name"
+                                className="input input-bordered bg-white"
+                            />
+                        </div>
 
-                                    {errors.message?.type === 'maxLength' && <span className="label-text-alt text-red-500">{errors.message.message}</span>}
-                                </label>
-                            </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text text-gray-300">Email</span>
+                            </label>
+                            <input 
+                                type="email" 
+                                name="email" 
+                                value={email} 
+                                onChange={(e) => setEmail(e.target.value)} 
+                                placeholder="Your Email"
+                                className="input input-bordered bg-white"
+                            />
+                        </div>
 
-                            <div className="form-control">
-                                <button type='submit' className="btn block mx-auto btn-primary">Send message</button>
-                            </div>
-                        </form>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text text-gray-300">Message</span>
+                            </label>
+
+                            <textarea 
+                                type="text" 
+                                name="message" 
+                                value={message} 
+                                onChange={(e) => setMessage(e.target.value)} 
+                                placeholder="Message"
+                                className="textarea textarea-bordered bg-white"
+                            />
+                        </div>
+
+                        <div className="form-control mt-5">
+                            <button onClick={handleSubmit} type='submit' className="btn block mx-auto btn-primary">Send message</button>
+                        </div>
                     </div>
                 </div>
             </div>
