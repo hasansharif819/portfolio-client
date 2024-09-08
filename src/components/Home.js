@@ -1,7 +1,7 @@
 import React from 'react';
 import TypeAnimation from 'react-type-animation';
 import portfolio from '../Image/portfolio.gif';
-import cv from '../file/Sharif_Hasan_web_developer_resume.pdf';
+import resume from '../file/SHARIF_HASAN_FULL_STACK_WEB_DEVELOPER_RESUME.pdf';
 
 const Home = () => {
     return (
@@ -58,7 +58,7 @@ const Home = () => {
                     </p>
                     <p className='text-white font-semibold'>As a full-stack web developer, I am passionate about working for a software company where I can hardness my talents in web design, front-end, back-end, UI and UX design web development to provide excellent customer service.</p>
                     <br />
-                    <a href={cv} className=' text-primary border-b-2 border-primary p-2 my-5 font-bold'><button className="rounded-full">RESUME</button></a>
+                    <a href={resume} className='text-primary border-b-2 border-primary p-2 my-5 font-bold'><button className="rounded-full">RESUME</button></a>
                 </div>
             </div>
         </div>

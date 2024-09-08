@@ -1,0 +1,25 @@
+#footer{
+    background-color: black;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-span {
+    flex: 1;
+}
+
+@media only screen and (max-width: 400px) {
+    .footer-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width: 401px) and (max-width: 800px) {
+    .footer-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}
