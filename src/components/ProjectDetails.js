@@ -38,11 +38,11 @@ const ProjectDetails = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">{project.title}</h1>
 
           <div className="mb-6">
-            <p className="text-lg text-gray-600 mb-2"><strong>Frontend Technology:</strong> {project.frontendTechnology}</p>
+            <p className="text-lg text-gray-600 mb-2"><strong>Frontend Technology: </strong> {project.frontendTechnology}</p>
 
-            <p className="text-lg text-gray-600 mb-2"><strong>Backend Technology:</strong> {project.backendTechnology}</p>
+            <p className="text-lg text-gray-600 mb-2"><strong>Backend Technology: </strong> {project.backendTechnology}</p>
 
-            <p className="text-lg text-gray-700">{project.description}</p>
+            <p className="text-lg text-gray-700"><strong>Description: </strong>{project.description}</p>
           </div>
           
           <div className="flex gap-4 my-10 justify-center">
