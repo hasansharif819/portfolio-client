@@ -1,7 +1,7 @@
 import React from 'react';
 import TypeAnimation from 'react-type-animation';
 import portfolio from '../Image/portfolio.gif';
-import resume from '../file/SHARIF_HASAN_FULL_STACK_WEB_DEVELOPER_RESUME.pdf';
+import resume from '../file/SHARIF_HASAN_FULL_STACK_DEVELOPER_RESUME.pdf';
 
 const Home = () => {
     return (

@@ -56,7 +56,7 @@ const Projects = () => {
             <div className='w-11/12 mx-auto'>
                 <Slider {...settings}>
                     {projects.map((project) => (
-                        <div key={project._id} className="px-4">
+                        <div key={project._id} className="px-4 h-full">
                             <Project project={project} />
                         </div>
                     ))}

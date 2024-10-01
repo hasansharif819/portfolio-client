@@ -1,64 +1,53 @@
-import React, { useState } from "react";
-import { TECollapse } from "tw-elements-react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Blog = ({ blog }) => {
-  const [activeElement, setActiveElement] = useState("");
+  const sliceDes = blog?.description.slice(0, 220);
 
-  const handleClick = (value) => {
-    setActiveElement(value === activeElement ? "" : value);
-  };
+  useEffect(() => {
+    const blogCards = document.querySelectorAll('.blog-card');
+    const maxHeight = Math.max(...Array.from(blogCards).map(card => card.clientHeight));
+    
+    blogCards.forEach(card => {
+      card.style.height = `${maxHeight}px`;
+    });
+  }, []);
 
   return (
-    <div className="bg-accent shadow-lg rounded-lg p-2 mb-4">
-      <div className="mb-0" id="headingOne">
-        <button
-          className={`${
-            activeElement === "element1" &&
-            `text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
-          } group relative flex w-full items-center rounded-t-[15px] border-0 bg-accent px-5 py-4 text-left text-base text-white transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white`}
-          type="button"
-          onClick={() => handleClick("element1")}
-          aria-expanded="true"
-          aria-controls="collapseOne"
-        >
-          <div className="flex justify-between items-center w-[100%]">
-            <h1 className="text-xl font-semibold">{blog?.title}</h1>
-          </div>
-          <span
-            className={`${
-              activeElement === "element1"
-                ? `rotate-[-180deg] -mr-1`
-                : `rotate-0 fill-[#212529]  dark:fill-white`
-            } ml-auto h-5 w-5 shrink-0 fill-[#336dec] transition-transform duration-200 ease-in-out motion-reduce:transition-none dark:fill-blue-300`}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="h-6 w-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </span>
-        </button>
-      </div>
-      <TECollapse
-        show={activeElement === "element1"}
-        className="!mt-0 !rounded-b-none !shadow-none"
-      >
-        <div className="px-5 py-4 text-white">
-          <div className="blog-content-editor"
-            dangerouslySetInnerHTML={{ __html: blog?.description }}
+    <Link
+      to={`/blog/${blog?._id}`}
+      className="bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg rounded-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex flex-col justify-between blog-card relative"
+    >
+      <figure className="relative flex-shrink-0">
+        <img
+          src={blog?.img}
+          alt="Blog"
+          className="w-full h-60 object-cover transition-transform duration-300 transform hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-75"></div>
+        <figcaption className="absolute bottom-4 left-4 text-xl font-semibold text-white z-10">
+          <span className="title-shadow">{blog?.title}</span>
+        </figcaption>
+      </figure>
+
+      <div className="p-6 bg-gray-900 text-gray-300 flex-grow">
+        <div className="mb-4">
+          <p
+            dangerouslySetInnerHTML={{ __html: sliceDes+ "..." }}
+            className="text-base leading-relaxed"
           />
         </div>
-      </TECollapse>
-    </div>
+      </div>
+
+      <div className="p-6 bg-gray-900 flex justify-center absolute left-0 right-0 bottom-3">
+        <Link
+          to={`/blog/${blog?._id}`}
+          className="btn btn-sm bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-5 rounded-full shadow-lg hover:shadow-xl transition-transform transform hover:scale-105"
+        >
+          Read More
+        </Link>
+      </div>
+    </Link>
   );
 };
 

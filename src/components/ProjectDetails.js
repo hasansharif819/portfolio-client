@@ -7,7 +7,6 @@ const ProjectDetails = () => {
   const [project, setProject] = useState(null);
 
   useEffect(() => {
-    // Fetch project details by ID
     const fetchProject = async () => {
       try {
         const response = await axios.get(`https://portfolio-server-ten-eta.vercel.app/api/v1/projects/${id}`);
