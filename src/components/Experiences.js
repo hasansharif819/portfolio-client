@@ -21,7 +21,7 @@ const Experiences = () => {
           Professional Experience
         </h1>
         <div className='flex justify-center'>
-          <div className="relative py-10 w-full">
+          <div className="relative w-full">
             <div className="absolute border-l-4 border-green-400 h-full top-0 left-0"></div>
             <ul className="list-none relative">
               {experiences.map((experience) => (
